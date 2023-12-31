@@ -1,8 +1,11 @@
 .container {
+    border: 5px solid grey;
     display: flex;
     flex-wrap: wrap;
     height: 800px;
-    width: 800px;
+    width: 800px; 
+    margin: auto;
+    margin-top: 10%;
 }
 
 .container div {
