@@ -1,10 +1,11 @@
 .container {
     display: flex;
-    height: 512px;
-    width: 512px;
+    flex-wrap: wrap;
+    height: 800px;
+    width: 800px;
 }
 
-.grid {
-    height: 5px;
-    width: 5px;
+.container div {
+    height: 50px;
+    width: 50px;
 }
