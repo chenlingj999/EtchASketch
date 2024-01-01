@@ -14,10 +14,6 @@ body, html {
     margin-top: 10%;
 }
 
-.container div {
-    height: 50px;
-    width: 50px;
-}
 
 .modal {
     position: fixed;
