@@ -60,7 +60,11 @@ body, html {
 }
 
 .modal-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 15px;
+    height: 50px;
 }
 
 #overlay {
