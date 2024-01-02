@@ -1,6 +1,8 @@
 const container = document.querySelector('.container');
+
 function setColor(square) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let currentColor = square.style.backgroundColor;
     
     if (square.classList.contains("rainbow")) {
         square.style.backgroundColor = "#" + randomColor;
@@ -96,7 +98,7 @@ submitSize.addEventListener('click', () => {
 const rainbowMode = document.querySelector('#rainbow');
 const eraserMode = document.querySelector('#erase');
 const blackMode = document.querySelector('#black');
-
+const clearMode = document.querySelector('#clear');
 function setMode(modeClass) {
     const childDivs = container.querySelectorAll('.grid');
     childDivs.forEach((div) => {
@@ -115,4 +117,11 @@ eraserMode.addEventListener('click', () => {
 
 blackMode.addEventListener('click', () => {
     setMode('black');
+});
+
+clearMode.addEventListener('click', () => {
+    const childDivs = container.querySelectorAll('.grid');
+    childDivs.forEach((div) => {
+        div.style.backgroundColor = 'white';
+    });
 });
