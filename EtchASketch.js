@@ -1,4 +1,18 @@
 const container = document.querySelector('.container');
+function setColor(square) {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    
+    if (square.classList.contains("rainbow")) {
+        square.style.backgroundColor = "#" + randomColor;
+    } else if (square.classList.contains("black")) {
+        square.style.backgroundColor = 'black';
+    } else if (square.classList.contains("eraser")) {
+        square.style.backgroundColor = 'white';
+    } else {
+        square.style.backgroundColor = 'black';
+    }
+}
+
 function generateGrid(gridSize) {
     let i = 0;
     while (i < gridSize ** 2) {
@@ -8,34 +22,16 @@ function generateGrid(gridSize) {
         square.style.height = `${itemSize}px`;
         square.classList.add("grid");
         container.appendChild(square);
+
         square.addEventListener("mouseover", (event) => {
             if (event.buttons === 1) {
-                let squareClasses = square.classList;
-                if (squareClasses.contains("rainbow")) {
-                    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-                    event.target.style.backgroundColor = "#" + randomColor;
-                } else if (squareClasses.contains("black")) {
-                    event.target.style.backgroundColor = "black";
-                } else if (squareClasses.contains("eraser")) {
-                    event.target.style.backgroundColor = "white";
-                } else {
-                    event.target.style.backgroundColor = "black";
-                }
+                setColor(square);
             }
         });
+
         square.addEventListener("mousedown", (event) => {
             if (event.buttons === 1) {
-                let squareClasses = square.classList;
-                if (squareClasses.contains("rainbow")) {
-                    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-                    event.target.style.backgroundColor = "#" + randomColor;
-                } else if (squareClasses.contains("black")) {
-                    event.target.style.backgroundColor = "black";
-                } else if (squareClasses.contains("eraser")) {
-                    event.target.style.backgroundColor = "white";
-                } else {
-                    event.target.style.backgroundColor = "black";
-                }
+                setColor(square);
             }
         });
 
