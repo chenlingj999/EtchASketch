@@ -96,3 +96,10 @@ body, html {
     justify-content: space-around;
     padding-top: 50px;
 }
+
+.modeSelector .modes {
+    font-size: large;
+    font-weight: bold;
+    border: solid black;
+    background-color: silver;
+}
