@@ -8,12 +8,11 @@ function generateGrid(gridSize) {
         square.style.height = `${itemSize}px`;
         square.classList.add("grid");
         container.appendChild(square);
-        square.addEventListener(
-            "mouseover", 
-            (event) => {
+        square.addEventListener("mouseover", (event) => {
+            if (event.buttons === 1) {
                 event.target.style.backgroundColor = "black";
             }
-        );
+        });
         i++;
     }
 }
