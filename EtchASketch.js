@@ -13,6 +13,10 @@ function generateGrid(gridSize) {
                 event.target.style.backgroundColor = "black";
             }
         });
+        square.addEventListener("mousedown", (event) => {
+            event.target.style.backgroundColor = "black";
+        });
+
         i++;
     }
 }
