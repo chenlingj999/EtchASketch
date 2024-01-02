@@ -89,3 +89,10 @@ body, html {
     opacity: 1;
     pointer-events: all;
 }
+
+.modeSelector {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 50px;
+}
