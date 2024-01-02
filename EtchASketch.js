@@ -101,29 +101,22 @@ const rainbowMode = document.querySelector('#rainbow');
 const eraserMode = document.querySelector('#erase');
 const blackMode = document.querySelector('#black');
 
-rainbowMode.addEventListener('click', () => {
+function setMode(modeClass) {
     const childDivs = container.querySelectorAll('.grid');
     childDivs.forEach((div) => {
-        div.classList.remove('black');
-        div.classList.remove('eraser');
-        div.classList.add('rainbow');
+        div.classList.remove('black', 'eraser', 'rainbow');
+        div.classList.add(modeClass);
     });
+}
+
+rainbowMode.addEventListener('click', () => {
+    setMode('rainbow');
 });
 
 eraserMode.addEventListener('click', () => {
-    const childDivs = container.querySelectorAll('.grid');
-    childDivs.forEach((div) => {
-        div.classList.remove('black');
-        div.classList.remove('rainbow');
-        div.classList.add('eraser');
-    });
+    setMode('eraser');
 });
 
 blackMode.addEventListener('click', () => {
-    const childDivs = container.querySelectorAll('.grid');
-    childDivs.forEach((div) => {
-        div.classList.remove('rainbow');
-        div.classList.remove('eraser');
-        div.classList.add('black');
-    });
+    setMode('black');
 });
