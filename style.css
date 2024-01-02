@@ -5,6 +5,13 @@ body, html {
     background-color: blanchedalmond;
 }
 
+.title {
+    font-size: 52px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 24px;
+}
+
 .container {
     border: 5px solid grey;
     display: flex;
@@ -16,15 +23,10 @@ body, html {
     background-color: white;
 }
 
-#changeSize {
-    margin: 0;
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: large;
-    font-weight: bold;
+.changeSize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal {
