@@ -10,11 +10,33 @@ function generateGrid(gridSize) {
         container.appendChild(square);
         square.addEventListener("mouseover", (event) => {
             if (event.buttons === 1) {
-                event.target.style.backgroundColor = "black";
+                let squareClasses = square.classList;
+                if (squareClasses.contains("rainbow")) {
+                    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+                    event.target.style.backgroundColor = "#" + randomColor;
+                } else if (squareClasses.contains("black")) {
+                    event.target.style.backgroundColor = "black";
+                } else if (squareClasses.contains("eraser")) {
+                    event.target.style.backgroundColor = "white";
+                } else {
+                    event.target.style.backgroundColor = "black";
+                }
             }
         });
         square.addEventListener("mousedown", (event) => {
-            event.target.style.backgroundColor = "black";
+            if (event.buttons === 1) {
+                let squareClasses = square.classList;
+                if (squareClasses.contains("rainbow")) {
+                    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+                    event.target.style.backgroundColor = "#" + randomColor;
+                } else if (squareClasses.contains("black")) {
+                    event.target.style.backgroundColor = "black";
+                } else if (squareClasses.contains("eraser")) {
+                    event.target.style.backgroundColor = "white";
+                } else {
+                    event.target.style.backgroundColor = "black";
+                }
+            }
         });
 
         i++;
@@ -72,5 +94,36 @@ submitSize.addEventListener('click', () => {
     modals.forEach(modal => {
         modal.classList.remove('active');
         overlay.classList.remove('active');
+    });
+});
+
+const rainbowMode = document.querySelector('#rainbow');
+const eraserMode = document.querySelector('#erase');
+const blackMode = document.querySelector('#black');
+
+rainbowMode.addEventListener('click', () => {
+    const childDivs = container.querySelectorAll('.grid');
+    childDivs.forEach((div) => {
+        div.classList.remove('black');
+        div.classList.remove('eraser');
+        div.classList.add('rainbow');
+    });
+});
+
+eraserMode.addEventListener('click', () => {
+    const childDivs = container.querySelectorAll('.grid');
+    childDivs.forEach((div) => {
+        div.classList.remove('black');
+        div.classList.remove('rainbow');
+        div.classList.add('eraser');
+    });
+});
+
+blackMode.addEventListener('click', () => {
+    const childDivs = container.querySelectorAll('.grid');
+    childDivs.forEach((div) => {
+        div.classList.remove('rainbow');
+        div.classList.remove('eraser');
+        div.classList.add('black');
     });
 });
